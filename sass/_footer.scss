@@ -1,0 +1,75 @@
+/************** フッター **************/
+
+.footer {
+    margin-bottom: 85px;
+
+    .sns_check_box {
+        margin-bottom: 60px;
+    }
+
+    &_gloval_nav {
+        max-width: 500px;
+        margin: 0 auto;
+        font-size: 1.6rem;
+
+        li {
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 16px 30px;
+            border-top: 1px solid $Orange;
+            @include heisei(400);
+        }
+
+        a {
+            position: relative;
+            
+            &::before {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-top: 2px solid $Orange;
+                border-right: 2px solid $Orange;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .link_top {
+        @include heisei(800);
+        color: $Orange;
+    }
+}
+
+.zoo_desc {
+    padding: 30px;
+    background-color: $Orange;
+
+    h4 {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 8px;
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    p {
+        max-width: 500px;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        color: #fff;
+    }
+}
+
+.copyrignht {
+    padding: 8px 0;
+    text-align: center;
+    background-color: #F8AD54;
+
+    small {
+        color: #F08300;
+    }
+}

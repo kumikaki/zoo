@@ -1,0 +1,138 @@
+#animal_world {
+    background: $Blue;
+    text-align: center;
+    padding: 50px 0;
+
+    &.active {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    h1 {
+        margin-bottom: $margin;
+        line-height: 2;
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    p {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .animal_world_top {
+        p {
+            color: yellow;
+            font-weight: bold;
+        }
+    }
+
+    .btn {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 20px auto 30px auto;
+        background: #fff;
+        border-radius: 25px;
+        animation: shadow 2s linear infinite;
+
+        &::after {
+            position: absolute;
+            top: 28%;
+            left: 35%;
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-bottom: 4px solid $Blue;
+            border-right: 4px solid $Blue;
+            transform: rotate(45deg);
+        }
+    }
+
+    ul {
+        max-width: 620px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-content: center;
+        margin: 0 auto;
+        padding: 0 20px;
+        gap: 16px;
+
+        li {
+            max-width: 300px;
+            height: 50px;
+            line-height: 49px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 10px;
+
+            &:hover {
+                color: $Blue;
+                background: #fff;
+            }
+        }
+    }
+
+    .world_map {
+        max-width: 1000px;
+        margin: 20px auto;
+    
+        &.active {
+            margin: 20% auto;
+            opacity: 0;
+            transition: all 4s;
+
+            .area_Africa.active,
+            .area_Japan.active,
+            .area_Eurasia.active,
+            .area_America_S.active,
+            .area_America_N.active,
+            .area_Ocean.active {
+                color: #F0901C;
+                filter: drop-shadow(0 0 40px rgb(255, 255, 255));
+            }
+        }
+    }
+
+    .big_animation {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10%;
+
+        .Africa,
+        .Eurasia,
+        .Japan,
+        .Ocean,
+        .America_N,
+        .America_S {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            color: $Orange;
+            transform-origin: center;
+            filter: drop-shadow(0 0 5px white);
+            opacity: 0;
+
+            &.active {
+                display: block;
+                animation: mapFadeIn 3s ease 1s forwards,big 3s ease-in 2.5s forwards;
+            }
+        }
+    }
+
+    .animal_world_bottom {
+        position: relative;
+        z-index: 1;
+    }
+
+    .animal_world_top.active,
+    .animal_world_bottom.active {
+        animation: mapFedeOut .2s forwards;
+    }
+}

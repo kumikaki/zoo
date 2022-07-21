@@ -1,0 +1,235 @@
+@media screen and (min-width:400px) { 
+    .world_map {
+        max-width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #ivent_banner img {
+            width: 200px;
+    }
+}
+
+@media screen and (min-width:550px) { 
+    .page_head {
+        height: 400px;
+    }
+
+    .area_container {
+        grid-template-columns: 250px 250px;
+        grid-auto-rows: 60px;
+    }
+
+    .animal_group {
+        grid-template-columns: repeat(auto-fit, 250px);
+        gap: 20px;
+
+        &_list {
+            width: 250px;
+
+            &_photo {
+                height: 140px;
+            }
+        }
+    }
+
+    .map_desc_top li:nth-child(3) {
+        transform: translate(-20px, -370px);
+    }
+    
+    .map_desc_top li:nth-child(4) {
+        transform: translate(-190px, -230px);
+    }
+}
+
+@media screen and (min-width:900px) { 
+    .link_banner {
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 60px;
+
+        img {
+            margin: 5px;
+        }
+    }
+
+    .sns_group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &_box {
+            width: 100%;
+        }
+    }
+
+    .access iframe {
+        width: 70%;
+        height: 400px;
+    }
+
+    .page_head {
+        height: 450px;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    .page {
+
+        h2 {
+            height: 290px;
+        }
+    }
+
+    .ivent_goods_group.top {
+
+        div {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    .map_desc {
+
+        img {
+            display: block;
+            max-width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (min-width:1000px) {
+
+    .header_top {
+        width: 90%;
+    }
+    
+    main {
+        width: 90%;
+    }
+
+    .lp_main {
+        width: 100%;
+    }
+
+    .nav_menu {
+        width: 90%;
+        padding-bottom: 0;
+    }
+
+    .bottom_menu {
+        width: 10%;
+        height: 100vh;
+        right: 0;
+
+        nav {
+
+            ul {
+                flex-direction: column;
+                gap: 16px;
+
+                li {
+                    width: 85px;
+                    height: 85px;
+
+                    a {
+
+                        img {
+                            height: 45px;
+                        }
+
+                        .menu_btn_text {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom_menu nav ul li:not(:last-child) {
+        width: 85px;
+        height: 85px;
+    }
+
+    .nav_menu {
+        width: 40%;
+        margin-left: 50%;
+        border-radius: 15px 0px 0px;
+        box-shadow: 0 0 20px black;
+    }
+
+    .mv_wrap {
+
+        &.photo {
+            background: no-repeat bottom bottom;
+        }       
+    }
+
+    .sub_link {
+        gap: 24px;
+    }
+
+    .sns_group {
+        display: flex;
+
+        &_box {
+            max-width: 800px;
+        }
+    }
+
+    .ivent_about {
+        display: flex;
+        padding: 0;
+        gap: 30px;
+
+        &_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+
+            .stamp {
+                display: block;
+
+                p {
+                    width: auto;
+                }
+
+                img {
+                    position: initial;
+                }
+            }
+        }
+    }
+
+    #ivent_banner {
+        bottom: -1%;
+    }
+
+    .topup_btn {
+        right: 11%;
+        bottom: 10px;
+    }
+
+    .webticket_info {
+        right: 9%;
+    }
+
+    .footer {
+        width: 90%;
+        margin-bottom: 0;
+    }
+
+    .world_map {
+        margin: 30px auto;
+    }
+
+    #animal_world {
+        width: 100%;
+    }
+}

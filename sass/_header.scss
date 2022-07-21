@@ -1,0 +1,306 @@
+/******************* ヘッダー　******************/
+
+.header_top {
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    transform: translateY(-100px);
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    @include shadow(0px 0px 5px 5px rgba(0, 0, 0, 0.3));
+
+    img {
+        width: 235px;
+    }
+
+    .lang_select {
+
+        li {
+            text-align: left;
+            font-size: 1.4rem;
+        }
+    }
+
+    &.Downhead {
+        display: flex;
+        animation: Downhead .5s forwards;
+    }
+
+    &.Uphead {
+        display: flex;
+        animation: Uphead .5s forwards;
+    }
+}
+
+/******************* メニュー　******************/
+
+.nav_menu {
+    position: fixed;
+    z-index: 50;
+    overflow-x: auto;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+    padding-bottom: 85px;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    display: none;
+
+    &_back {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.gloval_nav {
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    ul, li, p, span, a {
+        position: relative;
+        display: block;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    p {
+        background-color: $Green;
+        color: #fff;
+        margin-bottom: 1px;
+        padding: 16px 24px;
+    }
+
+    li.has_child {
+        ul li {
+            margin-bottom: 1px;
+            padding: 16px 24px;
+            color: $Green;
+            background-color: #BED9BF;
+        }
+
+        span {
+            position: absolute;
+            top: 23px;
+            right: 26px;
+            content: '';
+            width: 13px;
+            height: 2px;
+            background-color: #fff;
+            transition: all .5s;
+
+            &:nth-child(2) {
+                transform: rotate(90deg);
+            }
+        }
+        &.active span:nth-child(2) {
+            transform: rotate(360deg);
+            opacity: .5;
+        }
+
+        ul {
+            display: none;
+        }
+    }
+
+    ul li a {
+        &::after {
+            position: absolute;
+            top: 23px;
+            right: 30px;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.sns_check_box {
+    text-align: center;
+
+    img {
+        width: 240px;
+        margin-bottom: 16px;
+    }
+
+    .sns_icon {
+        @include flex;
+        gap: 24px;
+        margin-bottom: 10px;
+
+        img {
+            width: 48px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.local_nav {
+    @include flex;
+    margin: 0;
+    background-color: $Orange;
+
+    li {
+        display: inline-block;
+        font-size: 1.4rem;
+        color: #fff;
+
+        + li {
+            margin-left: 24px;
+        }
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+/******************* 画面下メニュー　******************/
+
+.bottom_menu {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    @include flex;
+    width: 100%;
+    height: 85px;
+    background-color: #D67500;
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                height: 30px;
+                margin-bottom: 8px;
+            }
+
+            a {
+                width: 100%;
+            }
+
+            .menu_btn_text {
+                display: block;
+                height: 24px;
+                line-height: 27px;
+                text-align: center;
+                font-size: 1.3rem;
+                @include heisei(400);
+                color: #fff;
+                background: url(./img/green_bg.png) no-repeat center center;
+                background-size: cover;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+
+        li:not(:last-child) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 65px;
+            height: 65px;
+            background-color: #fff;
+            border-radius: 10px;
+
+            &::before {
+                content: '';
+            }
+        }
+    }
+
+    &_open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 65px;
+        height: 65px;
+        position: relative;
+
+        span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #fff;
+            transition: all .5s;
+
+            &:nth-child(1) {
+                width: 32px;
+                margin-top: 4px;
+            }
+            &:nth-child(3) {
+                width: 20px;
+
+                &::after {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 10px;
+                    content: 'メニュー';
+                    color: #fff;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    transition: all .3s;
+                }
+            }
+        }
+
+        &.active span {
+
+            &:nth-child(1) {
+                position: absolute;
+                top: 9px;
+                width: 26px;
+                transform: rotate(270deg);
+            }
+
+            &:nth-child(2) {
+                position: absolute;
+                bottom: 37px;
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff;
+                background-color: rgba(0, 0, 0, 0);
+                transform: rotate(135deg);
+            }
+
+            &:nth-child(3) {
+                background-color: rgba(0, 0, 0, 0);
+                
+                &::after {
+                    content: 'もどす';
+                    left: 15px;
+                }
+            }
+        }
+    }
+}

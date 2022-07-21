@@ -1,0 +1,867 @@
+
+.lp {
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.lp_header {
+    height: 100vh;
+
+    &_bg {
+        height: 45px;
+        padding: 4px 0;
+        background: url(./himukaizer/header-bg.jpg) no-repeat center center;
+        background-size: cover;
+    }
+
+    &_logo {
+        display: block;
+        width: auto;
+        height: 35px;
+        margin: 0 auto;
+    }
+
+    .back_screen {
+        position: fixed;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        background: url(./himukaizer/lp_top_bg.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.lp_popup {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    
+    &_box {
+        max-width: 500px;
+        padding: 0 10px;
+
+        img {
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px $Gray;
+        }
+    }
+
+    &_close {
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        text-align: center;
+        line-height: 20px;
+        font-size: 2rem;
+        background: #fff;
+        border: 1px solid #000;
+    }
+
+    &_btn {
+        width: 250px;
+        height: 50px;
+        margin: 0 auto;
+        background: #000;
+        border: 2px solid #948B3B;
+        border-radius: 25px;
+
+        a {
+            position: relative;
+            display: block;
+            text-align: center;
+            line-height: 46px;
+            font-weight: bold;
+            color: #948B3B;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 28%;
+                right: 5%;
+                display: block;
+                width: 0px;
+                height: 0px;
+                border-left: 8px solid red;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+            }
+        }
+    }
+}
+
+.lp_menu {
+    position: fixed;
+    z-index: 10;
+    bottom: -50%;
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(169deg, rgba(0,0,0,1) 0%, rgba(111,111,111,1) 78%, rgba(98,98,98,1) 83%, rgba(0,0,0,1) 100%);
+    transition: all .5s;
+
+    &.active {
+        bottom: 0;
+    }
+
+    ul {
+        text-align: center;
+
+        li {
+            margin-bottom: $margin;
+        }
+
+        a {
+            color: #fff;
+            font-size: 2rem;
+        }
+    }
+
+}
+
+.lp_menu_btn {
+    position: fixed;
+    z-index: 20;
+    right: 5%;
+    bottom: 20px;
+    @include flex;
+    width: 50px;
+    height: 50px;
+    background: #948B3B;
+    box-shadow: 0 0 5px #948B3B;
+    border-radius: 25px;
+    transition: all .5s;
+
+    span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: #fff;
+        transition: all .5s;
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 18px;
+        }
+
+        &:nth-child(3) {
+            position: absolute;
+            bottom: 18px;
+        }
+    }
+
+    &.active {
+        background: #000;
+        box-shadow: 0 0 5px #000;
+
+        span {
+            &:nth-child(1) {
+                opacity: 0;
+            }
+    
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                top: 23px;
+            }
+    
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                bottom: 25px;
+            }
+        }
+    }
+}
+
+.lp_mv {
+
+    &_wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-bottom: 45px;
+    }
+
+    h1 {
+        img {
+            max-width: 500px;
+        }
+    }
+
+    .himukaizer_top {
+        position: relative;
+
+        img {
+            max-width: 350px;
+            margin-top: -30px;
+        }
+
+        &_logo {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+        }
+    }
+    
+    img:last-child {
+        width: 300px;
+    }
+}
+
+.X {
+    width: 100%;
+    display: block;
+    margin-bottom: -30px;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.ivent_catch {
+    padding: 50px 20px;
+    text-align: center;
+    background: url(./himukaizer/top-free-watch-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    h2 {
+        @include mincho;
+        font-size: 2.4rem;
+        color: #fff;
+    }
+
+    p {
+        color: #fff;
+        font-weight: bold;
+
+        span {
+            font-family: 'DIN 2014';
+            font-size: 4rem;
+
+            &.font_red {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .font_red {
+        color: red;
+    }
+}
+
+.ivent_intro {
+    padding: 150px 30px;
+    text-align: center;
+    background: url(./himukaizer/footer-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    img {
+        max-width: 500px;
+    }
+    
+    h3, p {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    h3 {
+        font-family: 'Hiragino Mincho ProN','ヒラギノ明朝 ProN','Hiragino Mincho Pro','ヒラギノ明朝 Pro',selif;
+        font-size: 3rem;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 250px;
+            height: 1px;
+            margin: 0 auto;
+            margin-top: 10px;
+            background: #fff;
+        }
+    }
+
+    &_box {
+        transform: translateY(30px);
+        opacity: 0;
+
+        &.fadeUp {
+            transition: all 5s ;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    & > p {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        @include mincho;
+
+        span {
+            background:linear-gradient(transparent 50%, #B71C36 50%);
+        }
+    }
+
+    p:nth-child(4) {
+        margin-bottom: 80px;
+    }
+
+    &_bottom {
+        transform: translateY(30px);
+        opacity: 0;
+
+        &.fadeUp {
+            transition: all 5s ;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        div {
+            @include flex;
+            max-width: 280px;
+            margin: 0 auto;
+            margin-bottom: $margin;
+            
+            img {
+                width: 100px;
+            }
+        }
+
+        p {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            text-align: left;
+            color: #909090;
+        }
+    }
+
+    .X {
+        margin: auto;
+        color: #fff;
+    }
+}
+
+.howto {
+    padding: 80px 0;
+    background: #000;
+
+    p {
+        max-width: 400px;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    img {
+        max-width: 500px;
+    }
+
+    h3 {
+        position: relative;
+        width: 190px;
+        margin: 0 auto;
+        margin-bottom: $margin;
+
+        img {
+            display: block;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 2px solid #fff;
+            border-left: 5px solid #fff;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 5px solid #fff;
+            border-left: 2px solid #fff;
+        }
+    }
+
+    &_image {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        border-radius: 100px;
+        background: url(./himukaizer/calender.jpg) no-repeat center center;
+        background-size: cover;
+
+        &.center {
+            background: url(./himukaizer/family.jpg) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.bottom {
+            background: url(./himukaizer/stamp.jpg) no-repeat center center;
+            background-size: cover;
+        }
+    }
+
+    & > p {
+        @include mincho;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &_group {
+        margin-bottom: 60px;
+
+        img {
+            width: auto;
+            height: 95px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 10px #fff);
+        }
+
+        p {
+            margin-bottom: 30px;
+            padding: 0 25px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        &_btn {
+            position: relative;
+            width: 300px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 46px;
+            background: #fff;
+            border: 2px solid $Gray;
+            border-radius: 25px;
+
+            a {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: #000;
+                text-decoration: none;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 40%;
+                    right: 5%;
+                    display: block;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 8px solid red;
+                    border-right: 8px solid transparent;
+                    border-left: 8px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+.story {
+    padding: 80px 0;
+    background: rgba(0, 0, 0, .6);
+
+    h3 {
+        position: relative;
+        width: 190px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+
+        img {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 2px solid #fff;
+            border-left: 5px solid #fff;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 5px solid #fff;
+            border-left: 2px solid #fff;
+        }
+    }
+
+    p {
+        max-width: 450px;
+        margin: 0 auto;
+        margin-bottom: 24px;
+        padding: 0 25px;
+        text-align: center;
+        color: #fff;
+        @include mincho;
+
+        &:nth-child(4) {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.link_btn {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    background: #000;
+    border-radius: 25px;
+    box-shadow: 0 0 15px #fff;
+
+    a {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 30%;
+            right: 5%;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-left: 8px solid red;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+    }
+}
+
+.movie_link {
+    padding: 150px 25px;
+    background: url(./himukaizer/top-free-watch-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    & > img {
+        max-width: 300px;
+        margin-bottom: 50px;
+    }
+
+    .movie_image {
+        max-width: 250px;
+        margin-bottom: 16px;
+    }
+
+    p {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.ivent_goods {
+    padding: 100px 10%;
+    background: url(./himukaizer/footer-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    &_photo {
+        transform: translateY(30px);
+        opacity: 0;
+
+        &.fadeUp {
+            transition: all 5s ;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    h3 {
+        position: relative;
+        width: 190px;
+        margin: 0 auto;
+        margin-bottom: $margin * 2;
+
+        img {
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 2px solid #fff;
+            border-left: 5px solid #fff;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 13px;
+            height: 35px;
+            border-right: 5px solid #fff;
+            border-left: 2px solid #fff;
+        }
+    }
+
+    p {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: $margin;
+        padding: 0 10px;
+        color: $Black;
+    }
+
+    h4 {
+        margin-bottom: 30px;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #000;
+        background: #948B3B;
+    }
+
+    h5 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    dt, dd {
+        margin: 0;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    span {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    &_group {
+        background: #fff;
+        padding-bottom: 10px;
+
+        img {
+        width: 180px;
+        margin-bottom: $margin;
+        }
+
+        &.top p {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.4rem;
+            color: #909090;
+        }
+
+        a {
+            display: inline;
+            text-decoration: underline;
+        }
+
+        &.zoo_access a {
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+
+    #stampset {
+
+        .stampset_text {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #C30D23;
+        }
+
+        .stampset_box {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 25px;
+
+            p {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+
+                span {
+                    font-family: 'DIN 2014';
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+
+    .attention_span {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 1.3rem;
+    }
+}
+
+iframe {
+    width: 100%;
+    max-height: 500px;
+}
+
+.lp_ivent_info {
+    margin-bottom: 60px;
+    padding: 50px 0;
+    background: $Gray;
+}
+
+.detail {
+
+    &_btn {
+        width: 90%;
+        margin: 0 auto;
+
+        h3 {
+            position: relative;
+            height: 48px;
+            margin-bottom: $margin;
+            text-align: center;
+            line-height: 44px;
+            font-size: 1.8rem;
+            color: #fff;
+            background: #3b9481;
+            border: 2px solid #948B3B;
+
+            &::after {
+                content: '+';
+                display: block;
+                position: absolute;
+                top: -5%;
+                right: 5%;
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        &.active {
+
+            h3::after {
+                content: '×';
+            }
+        }
+
+        ul {
+            padding: 5%;
+            background-color: #fff;
+            display: none;
+
+            li {
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                font-size: 1.7rem;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    margin-top: 5px;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #948B3B;
+                }
+            }
+
+            p {
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
+.lp_footer {
+
+    span {
+        display: block;
+        margin-bottom: $margin;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    
+    span:last-child {
+        display: block;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .info_btn {
+        @include flex;
+        width: 250px;
+        height: 48px;
+        margin: 0 auto;
+        margin-bottom: $margin *3;
+        font-size: 1.5rem;
+        color: #948B3B;
+        background: #000;
+        border: 2px solid #948B3B;
+        border-radius: 24px;
+    }
+}
+
+.footer_link {
+    margin-bottom: $margin *2;
+    padding: 60px 0 30px 0;
+    background: #000;
+
+    .zoo_link {
+        margin-bottom: $margin *3;
+
+        img {
+            width: 200px;
+            margin-bottom: $margin *2;
+        }
+    }
+
+    .himukaizer_link {
+        margin-bottom: $margin *3;
+
+        img {
+            width: 250px;
+            margin-bottom: $margin *2;
+        }
+    }
+}

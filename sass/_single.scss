@@ -1,0 +1,63 @@
+
+.group.category {
+    padding: 30px 10px;
+    background: url(./svg/blue_bg.svg) repeat;
+}
+
+.group_list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &_photo {
+        width: 80px;
+        height: 60px;
+        overflow: hidden;
+
+        img {
+            width: auto;
+            height: 60px;
+        }
+    }
+
+    span {
+        display: block;
+        margin-left: 10px;
+    }
+
+    &_name {
+        font-size: 1.7rem;
+        font-weight: bold;
+
+        &_en {
+            width: 100%;
+            font-size: 1.4rem;
+
+            &::before {
+                @include arrow;
+                width: 20px;
+                height: 20px;
+                bottom: 10px;
+                right: 10px;
+                background: $Green;
+                border-radius: 10px;
+            }
+
+            &::after {
+                @include arrow;
+                bottom: 15px;
+                right: 14px;
+                border-left: 6px solid #fff;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,270 @@
+@keyframes walk {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes Footprints {
+    0% {
+        opacity: 1;
+        bottom: 0;
+    }
+
+    20% {
+        bottom: 20px;
+    }
+
+    50% {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rota {
+    0% {
+        transform: translate(-50%, -50%)rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%)rotate(360deg);
+    }
+}
+
+@keyframes splashOut {
+    0% {
+        transform: translateY(0)
+    }
+
+    10% {
+        transform: translateY(-20%)
+    }
+
+    50% {
+        transform: translateY(-10%)
+    }
+
+    100% {
+        transform: translateY(-110%)
+    }
+}
+
+@keyframes Downhead {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes Uphead {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes image_photo {
+    0% {
+        background-image: url(./img/photo/mv_penguin.jpg);
+        
+    }
+
+    25% {
+        background-image: url(./img/photo/mv_kid.jpg);
+    }
+
+    50% {
+        background-image: url(./img/photo/mv_miyacat2.jpg);
+    }
+
+    75% {
+        background-image: url(./img/photo/mv_fam02.jpg);
+    }
+
+    100% {
+        background-image: url(./img/photo/mv_redpanda.jpg);
+    }
+}
+
+@keyframes fontAnime {
+    0% {
+        opacity: 1;
+        filter: blur(200px);
+    }
+
+    10% {
+        opacity: 1;
+        filter: blur(10px);            
+    }
+
+    30% {
+        opacity: 1;
+        filter: blur(0); 
+    }
+
+    70% {
+        opacity: 1;
+        filter: blur(0); 
+    }
+
+    90% {
+        filter: blur(10px);
+        opacity: 1;
+    }
+
+    100% {
+        filter: blur(10px);
+        opacity: 0;
+    }
+}
+
+@keyframes DownAnime {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes UpAnime {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(140px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(140px);
+    }
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 10%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+@keyframes fly {
+    0% {
+        top: 80%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0px rgba(0, 0, 0, .3);
+    }
+
+    25% {
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+    }
+
+    50% {
+        box-shadow: 0 0 10px 8px rgba(255, 255, 255, .5);
+    }
+
+    75% {
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+    }
+
+    100% {
+        box-shadow: 0 0 0px rgba(0, 0, 0, .3);
+    }
+}
+
+@keyframes mapFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mapFedeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes big {
+    0% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(70);            
+    }
+}
